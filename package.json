@@ -1,0 +1,24 @@
+{
+  "name": "test2",
+  "version": "1.0.0",
+  "description": "nodejs tdd kodlama",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha --recursive --exit"
+  },
+  "author": "osman sekman",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "http": "0.0.1-security",
+    "mocha": "^10.0.0"
+  }
+}
