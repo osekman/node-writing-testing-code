@@ -1,8 +1,8 @@
-const http        = require('http');
-const compression = require('compression')
-const express     = require('express');
-const bodyParser  = require('body-parser');
-const cors        = require('cors');
+import http        from 'http'
+import compression from 'compression'
+import express     from 'express'
+import bodyParser  from 'body-parser'
+import cors        from 'cors'
 
 
 //-------- HTTP -----
@@ -47,4 +47,4 @@ app.post('/getToken', function (request, response) {
 
 
 
-module.exports = app;
+export let server = app 

@@ -1,17 +1,14 @@
+import chai from 'chai';
+chai.should();  // Modifies `Object.prototype`
 
-
-
-const chaiHttp = require("chai-http");
-
-const chai = require("chai");
-const should = chai.should();
 const expect = chai.expect;
 const assert = chai.assert;
 
+import chaiHttp from 'chai-http';
 chai.use(chaiHttp);
 
 
-const { test, kare, yas, multi } = require("../paket");
+import { test, kare, yas, multi } from "../paket/index.js";
 
 
 describe("Örnek Test Uygulamaları", () => {
@@ -58,7 +55,7 @@ describe("Testing with chai", () => {
 });
 
 
-const server = require("../index");
+import {server} from "../index.js";
 
 // her test alani serveri kendisi ayaga kaldirip test yapiyor, o yuzden injection 
 
@@ -100,39 +97,39 @@ describe("Token Test Uygulamaları", () => {
 });
 
 
-describe("HTTP Test Uygulamaları", () => {
+// describe("HTTP Test Uygulamaları", () => {
 
-    it("GET : start", done => {
+//     it("GET : start", done => {
 
-        chai.request(server).get("/")
-            .end((error, response) => {
+//         chai.request(server).get("/")
+//             .end((error, response) => {
 
-                response.should.have.status(200);
-                //Bu request neticesinde status kod 200 olmalıdır.
-                response.body.should.be.a("object");
-                //Gelen veri bir obje olmalıdır.
+//                 response.should.have.status(200);
+//                 //Bu request neticesinde status kod 200 olmalıdır.
+//                 response.body.should.be.a("object");
+//                 //Gelen veri bir obje olmalıdır.
 
 
-                done();
-            });
-    });
+//                 done();
+//             });
+//     });
 
-    it("GET : test", done => {
+//     it("GET : test", done => {
 
-        chai.request(server).get("/test")
-            .end((error, response) => {
+//         chai.request(server).get("/test")
+//             .end((error, response) => {
 
-                response.should.have.status(200);
-                //Bu request neticesinde status kod 200 olmalıdır.
-                response.body.should.be.a("object");
-                //Gelen veri bir obje olmalıdır.
-                response.body.should.be.property("message");
-                //Obje içerisinde name adında bir property olmalıdır.
-                response.body.should.be.property("path").eql("test");
-                //Obje içerisinde name adındaki propertynin değeri "Gençay" değerine eşit olmalıdır.
+//                 response.should.have.status(200);
+//                 //Bu request neticesinde status kod 200 olmalıdır.
+//                 response.body.should.be.a("object");
+//                 //Gelen veri bir obje olmalıdır.
+//                 response.body.should.be.property("message");
+//                 //Obje içerisinde name adında bir property olmalıdır.
+//                 response.body.should.be.property("path").eql("test");
+//                 //Obje içerisinde name adındaki propertynin değeri "Gençay" değerine eşit olmalıdır.
 
-                done();
-            });
-    });
+//                 done();
+//             });
+//     });
 
-});
+// });
