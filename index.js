@@ -44,17 +44,7 @@ app.post('/getToken', function (request, response) {
 });
 
 
-const { test, kare, yas, multi } = require("./paket");
 
-console.log(yas);
-console.log(multi(2).kendisi);
-console.log(multi(3).karesi);
-
-for (i = 0; i < 1; i++) {
-    console.log(test(), " >> ", i)
-    console.log(kare(i))
-    console.log("-----------");
-}
 
 
 module.exports = app;
